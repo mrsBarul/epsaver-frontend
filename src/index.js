@@ -24,3 +24,10 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+    // "@testing-library/user-event": "^13.5.0",
+    // "animate.css": "^4.1.1",
+    // "axios": "^1.4.0",
+    // "dayjs": "^1.11.8",
+

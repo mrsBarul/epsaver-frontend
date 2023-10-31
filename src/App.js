@@ -10,30 +10,30 @@ import CollectionPage from '../src/Components/CollectionComponent/CollectionPage
 
 function App() {
 
-  const isAuthenticated = useSelector(getIsAuthenticated);
-  const userData = useSelector(getUserData);
+    const isAuthenticated = useSelector(getIsAuthenticated);
+    const userData = useSelector(getUserData);
 
 
 
-  if (isAuthenticated && userData && userData.user && userData.user.isActivated) {
-      return (
-          <div className="App">
-              <CollectionPage/>
-          </div>
-      );
-  }
-  else {
-      return (
-          <Router>
-              <div className="App">
-                  <Routes>
-                      <Route path="/" element={<MainPage />} />
-                      <Route path="/ChoiceAuth" element={<ChoiceAuth />} />
-                  </Routes>
-              </div>
-          </Router>
-      );
-  }
-}
+    if (isAuthenticated && userData && userData.user && userData.user.isActivated) {
+        return (
+            <div className="App">
+                <CollectionPage/>
+            </div>
+        );
+    }
+    else {
+        return (
+            <Router>
+                <div className="App">
+                    <Routes>
+                        <Route path="/" element={<MainPage />} />
+                        <Route path="/ChoiceAuth" element={<ChoiceAuth />} />
+                    </Routes>
+                </div>
+            </Router>
+        );
+    }
+    }
 
 export default App;
