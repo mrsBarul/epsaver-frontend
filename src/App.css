@@ -1,0 +1,1828 @@
+@import 'sweetalert2/dist/sweetalert2.min.css'; 
+@import 'animate.css/animate.min.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Display';
+  font-weight: 900;
+}
+
+
+
+input:focus, select:focus, option:focus, textarea:focus, .confirm:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+body {
+  background-image: url(background.png);
+  background-color: #080B16;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1280px;
+}
+
+.Content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+
+.collection {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 13.3px;
+}
+
+
+
+.cardContainer {
+  position: relative;
+  width: 310px;
+  height: 470px;
+  background: #31374D;
+  border: 1px solid #707CA8;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.cardContent {
+  position: relative;
+  width: 310px;
+  height: 470px;
+  background: linear-gradient(180deg, #292E41 0%, rgba(41, 46, 65, 0.45) 3.65%, rgba(41, 46, 65, 0.45) 55.73%, rgba(41, 46, 65, 0.9) 67.71%, #292E41 76.04%);
+  z-index: 1;
+}
+
+.poster {
+  position: absolute;
+  width: 310px;
+  height: 410px;
+  left: 0px;
+  top: -20px;
+  z-index: 0;
+}
+
+
+.poster img {
+  width: 310px;
+  height: 410px;
+}
+
+.episodeSeries {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  padding: 10px;
+}
+
+
+.episodeContainer, .seriesContainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(25, 31, 50, 0.91) 42.19%, rgba(25, 31, 50, 0.79) 58.33%, rgba(25, 31, 50, 0.71) 71.35%, rgba(25, 31, 50, 0.66) 81.77%, rgba(25, 31, 50, 0.53) 93.75%,rgba(25, 31, 50, 0.06) 100%);
+  border-radius: 50%;
+}
+
+.episode, .series {
+  position: absolute;
+  font-size: 30px;
+  color: #bbc0d3;
+}
+
+.seriesContainer {
+  align-self:flex-end;
+  margin-bottom: 20px;
+}
+
+
+
+
+.serialInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 30px;
+  height: 170px;
+  width: 100%;  
+}
+
+.title {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 5px;
+}
+
+.nameOfSerial {
+  text-align: center;
+  font-size: 18px;
+  color: #191F32;
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.nameOfSerialLong {
+  text-align: center;
+  font-size: 12px;
+  color: #191F32;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.translate {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #191f32ce;
+  font-weight: 600;
+}
+
+.newEpisode {
+  position: absolute;
+  bottom: -5px;
+  left: 0px;
+  z-index: 1;
+}
+
+.ticket {
+  width: 310px;
+}
+
+.containerNewEpisode {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.lineCard {
+	height: 30px;
+  border: 1px solid #c03939;
+}
+
+.itemNewEpisode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.year, .day, .hour, .minute {
+  color: #7F86A2;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.03em;
+}
+
+.numberOfYear, .numberOfDay, .numberOfHour, .numberOfMinute {
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: #FFC700;
+}
+
+.MainPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  gap: 100px;
+}
+
+.logoLoginContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.slides-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    gap: 30px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 1.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start; 
+  opacity: 0.4;
+  transition: opacity 0.7s ease-in;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.description {
+  width: 550px;
+}
+
+.epsaver{
+  color: #E7B45E;
+  font-size: 40px;
+  letter-spacing: 1px;
+  line-height: 50px;
+  font-weight: 600;
+}
+
+.description p {
+  color: #7F86A2;
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 50px;
+  font-weight: 600;
+}
+
+.slideImage {
+  width: 700px;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.indicator {
+  width: 30px;
+  height: 10px;
+  border-radius: 30px;
+  background-color: #bbc0d3;
+  cursor: pointer;
+}
+
+.active-indicator {
+  background-color: #E7B45E;
+}
+
+
+.login {
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  background: transparent;
+  border: 2px solid #E7B45E;
+  color: #E7B45E;
+  border-radius: 30px;
+}
+
+
+
+
+.headerContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  min-height: 100vh;
+  margin-bottom: 50px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.logoHeader {
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+}
+
+.logoHeaderImage {
+  width: 250px;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  width: 250px;
+  height: 50px;
+  background: #EFDD9D;
+  border: none;
+  border-radius: 30px;
+  padding:0 10px 0 65px ;
+}
+::placeholder { 
+  color: #31374D;
+}
+
+
+span {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+}
+
+.iconSearch {
+  width: 30px;
+}
+
+.AuthContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.loginRegistrationAuthContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.lineAuth {
+	height: 100%;
+  border: 1px solid #707CA8
+}
+
+.question {
+  color: #707CA8;
+  font-size: 30px;
+}
+
+.loginRegistrationContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url(AuthFormpng.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 100px;
+  width: 100%;
+  height: 700px;
+  border: 1px solid #707CA8;
+  border-radius: 30px;
+}
+
+
+.loginRegistration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 350px;
+  height: 100%;
+}
+
+.titleLoginRegistration {
+  color: #E7B45E;
+  letter-spacing: 4px;
+  font-size: 35px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+
+.inputContainer input {
+  height: 40px;
+  background: transparent;
+  border: 2px solid #707CA8;
+  border-radius: 30px;
+  padding: 10px;
+  color: #707CA8;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.inputContainer label {
+  font-size: 20px;
+  color: #707CA8;
+}
+
+.questionAboutRegistration {
+  font-size: 15px;
+  color: #707CA8;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.loginRegistrationBtnContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.loginRegistrationBtn, .btnToPage {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  background: transparent;
+  border: 2px solid #E7B45E;
+  color: #E7B45E;
+  border-radius: 30px;
+}
+
+.btnToPage {
+  width: 250px;
+}
+
+.btnToPage a, .loginRegistrationBtn a, .loginLink{
+  text-decoration: none;
+  color: #E7B45E;
+  letter-spacing: 1px;
+}
+
+.ActivateContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  gap: 100px;
+}
+
+.activate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  gap: 100px;
+  width: 100%;
+  height: 700px;
+  border: 1px solid #707CA8;
+  border-radius: 30px;
+}
+
+.activateBtn {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  background: transparent;
+  border: 2px solid #E7B45E;
+  color: #E7B45E;
+  border-radius: 30px;
+}
+
+
+.profile {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  background: #EFDD9D;
+  border-radius: 30px;
+}
+
+.containerUser {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.avatarContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatarUser {
+  display: flex;
+  background-color: #31374D;
+  border-radius: 50%;
+  border: 1px solid #EFDD9D;
+}
+
+.user {
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid #31374D;
+}
+
+.profileBtn{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.profileBtn p {
+  font-size: 15px;
+  color: #31374D
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  gap: 10px;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  z-index: 3;
+}
+
+.profileInfo li {
+  display: flex;
+  align-items: center;
+  background-color: #EFDD9D;
+  color: #31374D;
+  list-style: none;
+  font-size: 15px;
+  height: 40px;
+  width: 150px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.profileInfoNone {
+  display: none;
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  background-color: #EFDD9D;
+  border: 3px solid #c03939;
+  color: #c03939;
+  list-style: none;
+  gap: 10px;
+  font-size: 15px;
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.exit {
+  width: 25px;
+}
+
+
+
+.buttonFilter {
+  display: flex;
+  gap: 21.5px;
+}
+
+.filterModalBtnContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterModalBtn {
+  width: 195px;
+  height: 30px;
+  background: #31374D;
+  border-radius: 20px;
+  border: none;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #EFDD9D;
+}
+
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 21.5px;
+}
+
+.btnCategory {
+  width: 150px;
+  height: 50px;
+  background: #31374D;
+  border-radius: 30px;
+  border: none;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #EFDD9D;
+}
+
+
+
+
+.CardEditingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  width: 650px;
+  height: 500px;
+  background: #292E42;
+  border: 1px solid #707CA8;
+  border-radius: 50px;
+  z-index: 100;
+}
+
+.posterEditingContainer {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  height: 450px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.posterEditing {
+  width: 300px;
+  height: 450px;
+}
+
+.posterEditingContainer:after {
+  content:'';
+  display: block;
+  position:absolute;
+  left:0;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(0deg, rgba(112, 124, 168, 0.19), rgba(112, 124, 168, 0.19));
+  width: 300px;
+  height: 450px;
+}
+
+.editingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 450px;
+  width: 275px;
+  z-index: 100;
+}
+
+.titleEditingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.titleEditing, .titleAdd {
+  font-size: 20px;
+  color: #080B16;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+label {
+  font-size: 15px;
+  color: #080B16;
+  letter-spacing: 1px;
+}
+
+select {
+  color: #7F86A2;
+  background-color: #080B16;
+}
+
+.closeBtn {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: transparent;
+  width: 100%;
+}
+
+.closeImage {
+  width: 20px;
+}
+
+.episodeSeriesEditingContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 5px;
+}
+
+.episodeSeriesEditingItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  gap: 5px;
+}
+
+.episodeSeriesEditingInput {
+  width: 70px;
+  height: 35px;
+  background: #292E42;
+  border: 2px solid #080B16;
+  border-radius: 30px;
+  padding: 10px;
+  color:#7F86A2
+}
+
+.translateEditing, .raitingEditing, .statusEditing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.translateEditingSelect, .raitingEditingSelect, .statusEditingSelect {
+  width: 190px;
+  height: 40px;
+  background: #292E42;
+  border: 2px solid #080B16;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.commentEditingInput {
+  width: 275px;
+  height: 80px;
+  background: #292E42;
+  border: 2px solid #080B16;
+  color: #7F86A2;
+  border-radius: 30px;
+  padding: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  resize: none;
+  letter-spacing: 1px;
+}
+
+.commentEditingInput::-webkit-scrollbar {
+  width: 0;
+}
+
+
+
+.commentEditingInput::placeholder {
+  color: #707CA8;
+  font-weight: 400;
+}
+
+.buttonsEditingContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deleteEditing {
+  width: 130px;
+  height: 40px;
+  background: #292e42;
+  border: 2px solid #c03939;
+  color: #c03939;
+  border-radius: 30px;
+}
+
+.saveEditing {
+  width: 130px;
+  height: 40px;
+  background: #292e42;
+  border: 2px solid #E7B45E;
+  color: #E7B45E;
+  border-radius: 30px;
+}
+
+
+
+
+.modal {
+  height: 100%;
+  width: 100vw;
+  background-color: #0f121ed9;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  pointer-events: all;
+  overflow: hidden;
+}
+
+.modalContent {
+  transform: scale(0.5);
+  transition: 0.5s all;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow-y: visible;
+  height: 100%;
+  z-index: 100;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.modalContent.active {
+  transform: scale(1);
+  z-index: 100;
+}
+
+
+
+.show {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 310px;
+  height: 470px;
+  background-color: transparent;
+}
+
+.showFilter {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 195px;
+  height: 30px;
+  background-color: transparent;
+}
+
+.formSearch {
+  display: flex;
+  position: relative;
+}
+
+.searchNewSerialInput {
+  position: relative;
+  background: #EFDD9D;
+  transition: ease-in-out 1s;
+  width: 350px;
+  height: 50px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 10px 0 65px;
+  color: #31374D;
+  font-size: 15px;
+}
+
+::placeholder { 
+  color: #31374D;
+}
+
+
+.add {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 5px;
+}
+
+.searchNewSerialContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 999;
+}
+
+.searchListContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  width: 350px;
+  height: 400px;
+  gap: 20px;
+  background-color: transparent;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 5;
+}
+
+.displayNone {
+  display: none;
+}
+
+.searchListContainer::-webkit-scrollbar {
+  width: 0;
+}
+
+.searchListItem {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  background-color: #EFDD9D;
+  width: 350px;
+  height: 100px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.showSearchContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100px;
+  background-color: transparent; 
+}
+
+.showSearch {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 70px;
+  background-color: transparent;
+}
+
+.posterImageContainer {
+  display: flex;
+}
+
+.posterImage {
+  width: 40px;
+  border-radius: 10px;
+}
+
+.titleOfSerial {
+  font-size: 20px;
+  color: #292E41;
+}
+
+.yearOfSerial {
+  font-size: 15px;
+  color: #292E41;
+}
+
+.auth {
+  color: #E7B45E;
+}
+
+.checkMail{
+  font-family: 'Noto Sans Display';
+  color: #707CA8;
+  line-height: 30px;
+  font-size: 40px;
+  letter-spacing: 2px;
+  line-height: 60px;
+  font-weight: 600;
+}
+
+.custom-popup-class {
+  font-size: 30px;
+  background-color: #080b16eb;
+  font-family: 'Noto Sans Display';
+  border-radius: 30px;
+  height: 700px;
+  width: 1280px;
+  color: #bbc0d3;
+  border: 2px solid #707CA8;
+}
+.confirm {
+  width: 180px;
+  height: 70px;
+  font-size: 30px;
+  background: transparent;
+  border: 2px solid #E7B45E;
+  color: #E7B45E;
+  border-radius: 30px;
+  margin-right: 15px;
+} 
+
+.сancel {
+  width: 180px;
+  height: 70px;
+  font-size: 30px;
+  background: transparent;
+  border: 2px solid #c03939;
+  color: #c03939;
+  border-radius: 30px;
+  margin-left: 15px;
+}
+
+
+@media all and (max-width: 1024px) {
+  .App {
+    width: 900px;
+    overflow-x: hidden;
+  }
+
+  .MainPageContainer, .AuthContainer {
+    overflow: hidden;
+  }
+
+  .description {
+    width: 350px;
+}
+
+  .slideImage {
+    width: 550px;
+  }
+
+  .searchNewSerialInput {
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 10px;
+    padding: 0 10px 0 45px;
+}
+
+  .buttonFilter {
+    gap: 15px;
+  }
+  .searchInput {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 10px;
+    padding: 0 10px 0 45px;
+  }
+
+  span {
+    width: 40px;
+    height: 40px;
+  }
+
+  .iconSearch {
+    width: 20px;
+  }
+
+  .buttonContainer {
+    gap: 15px;
+  }
+
+  .btnCategory {
+    width: 110px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 10px;
+  }
+  .profile {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+  }
+  .user {
+    width: 40px;
+  }
+  .profileBtn p {
+    font-size: 10px;
+  }
+
+  .profileInfo li {
+    font-size: 10px;
+    height: 30px;
+  }
+
+  .profileInfo {
+    top: 50px;
+  }
+  .logoutButton {
+    font-size: 10px;
+    height: 40px;
+  }
+  .collection {
+    gap: 15px;
+}
+  .cardContainer {
+    width: 290px;
+    border-radius: 20px;
+  }
+  .show {
+    width: 290px;
+  }
+  .poster, .poster img {
+    width: 290px;
+  }
+
+  .cardContent {
+    width: 290px;
+  }
+
+  .serialInfo {
+    gap: 20px;
+  }
+
+  .title {
+    height: 80px;
+  }
+
+  .ticket {
+    width: 290px;
+}
+}
+
+@media all and (max-width: 840px) {
+  .App {
+    width: 700px;
+  }
+
+  .MainPageContainer, .AuthContainer  {
+    gap: 50px;
+}
+  .headerContainer {
+    gap: 50px;
+  }
+
+  .logoImage {
+    width: 250px;
+  }
+
+  .description {
+    width: 250px;
+  }
+  .description p {
+    line-height: 30px;
+    font-size: 20px;
+  }
+  .epsaver {
+    font-size: 30px;
+    line-height: 30px;
+}
+  .slideImage {
+    width: 400px;
+  }
+
+  .loginRegistrationContainer {
+    padding: 50px;
+    height: 500px;
+    border-radius: 20px;
+  }
+  .loginRegistration {
+    gap: 15px;
+    width: 250px;
+  }
+
+  .titleLoginRegistration {
+    font-size: 30px;
+  }
+
+  .inputContainer input {
+    height: 35px;
+    border-radius: 20px;
+    font-size: 15px;
+  }
+
+  .inputContainer label {
+    font-size: 15px;
+  }
+  .questionAboutRegistration {
+    font-size: 12px;
+  }
+
+  .logoHeaderImage {
+    width: 200px;
+  }
+  .searchNewSerialInput {
+    width: 200px;
+  }
+
+  .buttonFilter {
+    gap: 10px;
+  }
+
+  .searchInput {
+    width: 130px;
+  }
+.buttonContainer {
+  gap: 10px;
+  }
+
+  .btnCategory {
+    width: 85px;
+    font-size: 8px;
+  }
+  .profile {
+    width: 130px;
+  }
+
+  .profileInfo, .profileInfo li, .logoutButton {
+    width: 130px;
+  }
+  .cardContainer, .show, .cardContent {
+    width: 223px;
+    height: 400px;
+  }
+  .poster, .poster img {
+    width: 223px;
+    height: 323px;
+  }
+  .episodeContainer svg, .seriesContainer svg{
+    height: 70px;
+    width: 70px;
+  }
+
+  .seriesContainer {
+    margin-bottom: 0;
+  }
+  .episodeSeries {
+    height: 250px;
+  }
+  .serialInfo {
+    gap: 5px;
+    height: 150px;
+  }
+  .title {
+    height: 80px;
+  }
+  .nameOfSerial {
+    font-size: 15px;
+  }
+  .nameOfSerialLong {
+    font-size: 10px;
+  }
+  .ticket {
+    width: 223px;
+  }
+  .itemNewEpisode {
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+  }
+  .year, .day, .hour, .minute {
+    font-size: 11px;
+    line-height: 10px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .App {
+    width: 400px;
+  }
+
+  .MainPageContainer, .AuthContainer  {
+    gap: 30px;
+}
+  .headerContainer {
+    gap: 30px;
+  }
+
+  .logoImage {
+    width: 150px;
+  }
+
+  .description {
+    width: 300px;
+    text-align: center;
+  }
+  .description p {
+    line-height: 20px;
+    font-size: 15px;
+  }
+  .epsaver {
+    font-size: 20px;
+    line-height: 0;
+}
+  .slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .slideImage {
+    width: 300px;
+  }
+
+  .indicators {
+    gap: 10px;
+  }
+  
+  .indicator {
+    width: 20px;
+    height: 5px;
+  }
+
+  .login, .btnToPage, .loginRegistrationBtn {
+    width: 150px;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 20px;
+  }
+
+  .loginRegistrationContainer {
+    padding: 30px;
+    height: 350px;
+  }
+  .loginRegistration {
+    gap: 10px;
+    width: 150px;
+  }
+
+  .titleLoginRegistration {
+    font-size: 20px;
+  }
+
+  .inputContainer input {
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .inputContainer label {
+    font-size: 12px;
+  }
+  .questionAboutRegistration {
+    font-size: 10px;
+  }
+
+  .header {
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .logoHeaderImage {
+    width: 150px;
+}
+  .searchNewSerialInput {
+    width: 130px;
+    height: 30px;
+    font-size: 8px;
+    padding: 0 10px 0 35px;
+  }
+
+  .searchListContainer {
+    margin-top: 40px;
+    width: 130px;
+    height: 200px;
+    gap: 10px;
+  }
+
+  .searchListItem {
+    gap: 10px;
+    width: 130px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .showSearchContainer {
+    width: 130px;
+    height: 50px;
+  }
+
+  .showSearch {
+    width: 130px;
+    height: 50px;
+  }
+
+  .posterImage {
+    width: 30px;
+    border-radius: 5px;
+  }
+  .titleOfSerial {
+    font-size: 10px;
+  }
+  .yearOfSerial {
+    font-size: 8px;
+  }
+
+  .searchInput {
+    width: 195px;
+    height: 30px;
+    font-size: 8px;
+    padding: 0 10px 0 35px;
+  }
+  span {
+    width: 30px;
+    height: 30px;
+}
+  .iconSearch {
+    width: 15px;
+  }
+
+  .buttonContainer {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile {
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
+  }
+  .profileInfo {
+    top: 40px;
+    gap: 5px;
+    width: 100px;
+  }
+  .profileInfo li {
+    font-size: 9px;
+    height: 20px;
+    width: 100px;
+  }
+  .logoutButton {
+    font-size: 9px;
+    height: 30px;
+    width: 100px;
+  }
+  .exit {
+    width: 20px;
+  }
+  .profileBtn {
+    display: none;
+  }
+  .user {
+    width: 30px;
+  }
+  .collection {
+    gap: 10px;
+  }
+  .cardContainer, .show, .cardContent {
+    width: 195px;
+    height: 350px;
+  }
+  .poster, .poster img {
+    width: 195px;
+    height: 300px;
+  }
+
+  .episodeSeries {
+    height: 230px;
+  }
+  .serialInfo {
+    gap: 5px;
+    height: 120px;
+  }
+  .title {
+    height: 60px;
+  }
+  .nameOfSerialLong {
+    font-size: 8px;
+  }
+  .nameOfSerial {
+    font-size: 10px;
+  }
+  .translate {
+    font-size: 10px;
+}
+  .ticket {
+    width: 195px;
+  }
+  .itemNewEpisode {
+    gap: 10px;
+    width: 35px;
+    height: 35px;
+  }
+  .year, .day, .hour, .minute, .numberOfYear, .numberOfDay, .numberOfHour, .numberOfMinute {
+    font-size: 10px;
+  }
+
+  .CardEditingContainer {
+    gap: 20px;
+    width: 380px;
+    height: 300px;
+    border-radius: 20px;
+  }
+
+  .posterEditingContainer {
+    width: 170px;
+    height: 280px;
+    border-radius: 20px;
+  }
+
+  .posterEditingContainer:after {
+    width: 170px;
+    height: 280px;
+}
+  .posterEditing {
+    width: 170px;
+    height: 280px;
+  }
+  .editingContainer {
+    height: 280px;
+    width: 170px;
+  }
+  .titleEditing, .titleAdd {
+    font-size: 15px;
+  }
+  .episodeSeriesEditingItem {
+    width: 85px;
+  }
+
+  label {
+    font-size: 10px;
+  }
+  .episodeSeriesEditingInput {
+    width: 30px;
+    height: 25px;
+    border-radius: 20px;
+  }
+  .translateEditingSelect, .raitingEditingSelect, .statusEditingSelect {
+    width: 110px;
+    height: 25px;
+    border-radius: 20px;
+    padding: 0px;
+    font-size: 8px;
+  }
+  .commentEditingInput {
+      width: 170px;
+      height: 60px;
+      border-radius: 20px;
+      padding: 5px;
+      font-size: 7px;
+  }
+  .deleteEditing, .saveEditing {
+    width: 75px;
+    height: 30px;
+    font-size: 10px;
+    border-radius: 20px;
+  }
+  
+}
+
+@media all and (max-width: 380px) {
+  .App {
+    width: 300px;
+  }
+
+  .logoHeaderImage {
+    width: 100px;
+  }
+
+  .logoImage {
+    width: 100px;
+  }
+  .epsaver {
+    font-size: 18px;
+  }
+
+  .login, .btnToPage, .loginRegistrationBtn {
+    width: 135px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .loginRegistrationContainer {
+    padding: 20px;
+    height: 280px;
+  }
+
+  .loginRegistration {
+    gap: 5px;
+    width: 150px;
+  }
+
+  .titleLoginRegistration {
+    font-size: 15px;
+    letter-spacing: 0.09em;
+  }
+
+  .inputContainer {
+    gap: 5px;
+}
+
+  .inputContainer input {
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .inputContainer label {
+    font-size: 12px;
+  }
+  .questionAboutRegistration {
+    font-size: 10px;
+  }
+
+  .searchNewSerialInput{
+    width: 110px;
+    height: 25px;
+    font-size: 10px;
+    padding: 0 10px 0 30px;
+  }
+  .searchInput {
+    width: 145px;
+    height: 25px;
+    font-size: 10px;
+    padding: 0 10px 0 30px;
+  }
+  span {
+    width: 25px;
+    height: 25px;
+    left: 8px;
+}
+  .iconSearch {
+    width: 15px;
+  }
+  .filterModalBtn {
+    width: 145px;
+    height: 25px;
+  }
+
+  .btnCategory {
+    width: 110px;
+    font-size: 10px;
+}
+
+  .searchListContainer, .searchListItem, 
+  .showSearchContainer, .showSearch {
+    width: 150px;
+  }
+  .profile {
+    width: 25px;
+    height: 25px;
+    margin-right: 4px;
+  }
+  .user {
+    width: 25px;
+  }
+
+  .cardContainer, .show, .cardContent {
+    width: 300px;
+    height: 470px;
+  }
+  .poster, .poster img {
+    width: 300px;
+    height: 400px;
+  }
+
+  .episodeSeries {
+    height: 300px;
+    padding: 10px;
+  }
+  
+  .episodeContainer svg, .seriesContainer svg{
+    height: 90px;
+    width: 90px;
+  }
+  
+  .seriesContainer {
+    margin-bottom: 20px;
+  }
+  
+  .serialInfo {
+    gap: 30px;
+    height: 170px;
+  }
+  
+  .nameOfSerial {
+    font-size: 18px;
+  }
+  
+  .nameOfSerialLong {
+    font-size: 12px;
+  }
+  
+  .translate {
+    font-size: 13px;
+  }
+  
+
+  .ticket {
+    width: 300px;
+  }
+  
+  .itemNewEpisode {
+    gap: 10px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .year, .day, .hour, .minute,
+  .numberOfYear, .numberOfDay, .numberOfHour, .numberOfMinute {
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.03em;
+  }
+
+  .CardEditingContainer {
+    gap: 20px;
+    width: 300px;
+    height: 220px;
+  }
+
+  .posterEditingContainer {
+    width: 130px;
+    height: 200px;
+  }
+
+  .posterEditingContainer:after {
+    width: 130px;
+    height: 200px;
+}
+  .posterEditing {
+    width: 130px;
+    height: 200px;
+  }
+  .editingContainer {
+    height: 200px;
+    width: 130px;
+  }
+  .titleEditing, .titleAdd {
+    font-size: 12px;
+  }
+  .episodeSeriesEditingItem {
+    width: 60px;
+  }
+
+  label {
+    font-size: 8px;
+  }
+  .episodeSeriesEditingInput {
+    width: 30px;
+    height: 20px;
+    font-size: 8px;
+    border: 1px solid #080B16;
+  }
+  .translateEditingSelect, .raitingEditingSelect, .statusEditingSelect {
+    width: 80px;
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid #080B16;
+  }
+  .commentEditingInput {
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #080B16;
+  }
+  .deleteEditing, .saveEditing {
+    width: 60px;
+    height: 25px;
+    font-size: 8px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
