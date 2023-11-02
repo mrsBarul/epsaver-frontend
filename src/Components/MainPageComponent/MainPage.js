@@ -50,7 +50,7 @@ const MainPage = () => {
         if (userData && userData.user && !userData.user.isActivated) {
             const time = setTimeout(() => {
                 handleShowAlert();
-            }, 1000)
+            }, 800)
             return () => clearInterval(time);
         }
         
