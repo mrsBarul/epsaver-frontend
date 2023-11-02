@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import newEpisode from "../../newEpisode.png"
+import newEpisode from "../../Image/newEpisode.png"
 import CardModal from "../ModalComponents/CardModal";
 import ReactCurvedText from 'react-curved-text';
 import  dayjs  from "dayjs";

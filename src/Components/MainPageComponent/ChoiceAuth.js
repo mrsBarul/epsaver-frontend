@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../logo.png'
+import logo from '../../Image/logo.png'
 import LoginAuth from "../ProfileComponent/LoginAuth";
 
 const ChoiceAuth = () => {

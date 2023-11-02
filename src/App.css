@@ -17,7 +17,7 @@ input:focus, select:focus, option:focus, textarea:focus, .confirm:focus {
 }
 
 body {
-  background-image: url(background.png);
+  background-image: url(./Image/background.png);
   background-color: #080B16;
 }
 
@@ -405,7 +405,7 @@ span {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-image: url(AuthFormpng.png);
+  background-image: url(./Image/AuthFormpng.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1030,7 +1030,6 @@ select {
 .checkMail{
   font-family: 'Noto Sans Display';
   color: #707CA8;
-  line-height: 30px;
   font-size: 40px;
   letter-spacing: 2px;
   line-height: 60px;
@@ -1086,6 +1085,12 @@ select {
 
   .slideImage {
     width: 550px;
+  }
+
+  .custom-popup-class {
+    font-size: 30px;
+    height: 500px;
+    width: 900px;
   }
 
   .searchNewSerialInput {
@@ -1210,6 +1215,28 @@ select {
 }
   .slideImage {
     width: 400px;
+  }
+
+  .custom-popup-class {
+    font-size: 20px;
+    border-radius: 20px;
+    height: 400px;
+    width: 700px;
+  }
+  .checkMail{
+    font-size: 30px;
+  }
+
+  .confirm {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+  } 
+  
+  .сancel {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
   }
 
   .loginRegistrationContainer {
@@ -1361,6 +1388,30 @@ select {
   .indicator {
     width: 20px;
     height: 5px;
+  }
+
+  .custom-popup-class {
+    font-size: 10px;
+    border-radius: 10px;
+    height: 200px;
+    width: 400px;
+  }
+  .checkMail{
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 20px;
+  }
+
+  .confirm {
+    width: 130px;
+    height: 30px;
+    font-size: 15px;
+  } 
+  
+  .сancel {
+    width: 130px;
+    height: 30px;
+    font-size: 15px;
   }
 
   .login, .btnToPage, .loginRegistrationBtn {
@@ -1615,6 +1666,24 @@ select {
   }
   .epsaver {
     font-size: 18px;
+  }
+
+  .custom-popup-class {
+    width: 300px;
+  }
+  .checkMail{
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .confirm {
+    width: 100px;
+    font-size: 12px;
+  } 
+  
+  .сancel {
+    width: 100px;
+    font-size: 12px;
   }
 
   .login, .btnToPage, .loginRegistrationBtn {

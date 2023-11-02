@@ -1,5 +1,5 @@
 import MainPageSlides from './MainPageSlide';
-import logo from "../../logo.png";
+import logo from "../../Image/logo.png";
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';

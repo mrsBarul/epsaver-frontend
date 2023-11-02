@@ -1,4 +1,4 @@
-import logo from '../../logo.png';
+import logo from '../../Image/logo.png';
 import Search from '../SearchComponent/Search';
 import Collection from './Collection'
 import { useSelector } from 'react-redux';

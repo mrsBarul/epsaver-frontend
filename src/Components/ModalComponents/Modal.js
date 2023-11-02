@@ -1,4 +1,4 @@
-import close from '../../close.png'
+import close from '../../Image/close.png'
 
 const Modal = ({ active, setActive, children}) => {
 

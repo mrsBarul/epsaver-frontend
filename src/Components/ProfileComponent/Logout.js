@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { logoutUser, setUser } from "../../Redux/authSlice";
-import exit from '../../exit.png';
+import exit from '../../Image/exit.png';
 
 const Logout = () => {
     
