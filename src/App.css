@@ -1081,24 +1081,9 @@ select {
   margin-left: 15px;
 }
 
+
+
 @media all and (max-width: 1700px) {
-  .App {
-    width: 1300px;
-    overflow-x: hidden;
-  }
-
-  .MainPageContainer, .AuthContainer {
-    overflow: hidden;
-  }
-
-  .collection {
-    gap: 20px;
-  }
-
-}
-
-
-@media all and (max-width: 1024px) {
   .App {
     width: 900px;
   }
