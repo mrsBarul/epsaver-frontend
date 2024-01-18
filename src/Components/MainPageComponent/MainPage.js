@@ -41,7 +41,7 @@ const MainPage = () => {
             },
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href("/ChoiceAuth");
+                window.location.href = "/ChoiceAuth";
             }
         });
     };
@@ -59,7 +59,7 @@ const MainPage = () => {
             
         }
         
-    }, [userData, history]);
+    }, [userData]);
 
     useEffect(() => {
         const interval = setInterval(() => {
