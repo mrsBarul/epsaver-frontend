@@ -1,7 +1,7 @@
 import MainPageSlides from './MainPageSlide';
 import logo from "../../Image/logo.png";
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Swal from 'sweetalert2';
 import { getUserData } from '../../Redux/authSlice';
 import { useSelector } from 'react-redux';
