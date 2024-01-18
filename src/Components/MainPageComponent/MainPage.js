@@ -1,6 +1,6 @@
 import MainPageSlides from './MainPageSlide';
 import logo from "../../Image/logo.png";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import Swal from 'sweetalert2';
 import { getUserData } from '../../Redux/authSlice';
@@ -9,6 +9,8 @@ import { useSelector } from 'react-redux';
 
 const MainPage = () => {
 
+
+    const history = useHistory();
     const isMounted = useRef(true);
     const userData = useSelector(getUserData);
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -59,7 +61,7 @@ const MainPage = () => {
             
         }
         
-    }, [userData]);
+    }, [userData, history]);
 
     useEffect(() => {
         const interval = setInterval(() => {
