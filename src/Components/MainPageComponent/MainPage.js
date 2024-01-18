@@ -40,7 +40,7 @@ const MainPage = () => {
             },
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = "/ChoiceAuth";
+                history.push("/ChoiceAuth");
             }
         });
     };
