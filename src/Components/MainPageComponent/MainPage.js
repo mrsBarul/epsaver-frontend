@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 
 const MainPage = () => {
 
+    const isMounted = useRef(true);
     const userData = useSelector(getUserData);
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -47,11 +48,15 @@ const MainPage = () => {
     
 
     useEffect(() => {
-        if (userData && userData.user && !userData.user.isActivated) {
+        if (isMounted.current && userData && userData.user && !userData.user.isActivated) {
             const time = setTimeout(() => {
                 handleShowAlert();
             }, 800)
-            return () => clearInterval(time);
+            return () => {
+                clearInterval(time);
+                isMounted.current = false;
+            }
+            
         }
         
     }, [userData]);

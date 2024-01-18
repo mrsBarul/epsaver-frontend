@@ -1103,6 +1103,11 @@ select {
     width: 900px;
   }
 
+  .checkMail{
+    font-size: 30px;
+    line-height: 30px;
+  }
+
   .searchNewSerialInput {
     width: 250px;
     height: 40px;
@@ -1234,7 +1239,8 @@ select {
     width: 700px;
   }
   .checkMail{
-    font-size: 30px;
+    font-size: 25px;
+    line-height: 25px;
   }
 
   .confirm {
