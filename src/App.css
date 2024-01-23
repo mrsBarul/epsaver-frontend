@@ -597,7 +597,7 @@ span {
   z-index: 3;
 }
 
-.profileInfo li {
+.profileInfo li{
   display: flex;
   align-items: center;
   background-color: #EFDD9D;
@@ -624,6 +624,21 @@ span {
   gap: 10px;
   font-size: 15px;
   height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.updateShare {
+  display: flex;
+  align-items: center;
+  background-color: #EFDD9D;
+  border: none;
+  color: #31374D;
+  list-style: none;
+  gap: 10px;
+  font-size: 15px;
+  height: 30px;
   width: 150px;
   border-radius: 10px;
   padding: 10px;
@@ -1158,8 +1173,8 @@ select {
     font-size: 10px;
   }
 
-  .profileInfo li {
-    font-size: 10px;
+  .profileInfo li, .updateShare {
+    font-size: 9px;
     height: 30px;
   }
 
@@ -1167,7 +1182,7 @@ select {
     top: 50px;
   }
   .logoutButton {
-    font-size: 10px;
+    font-size: 9px;
     height: 40px;
   }
   .collection {
@@ -1308,7 +1323,7 @@ select {
     width: 130px;
   }
 
-  .profileInfo, .profileInfo li, .logoutButton {
+  .profileInfo, .profileInfo li, .logoutButton, .updateShare {
     width: 130px;
   }
   .cardContainer, .show, .cardContent {
@@ -1544,17 +1559,15 @@ select {
   .profileInfo {
     top: 40px;
     gap: 5px;
-    width: 100px;
+    width: 147px;
   }
-  .profileInfo li {
-    font-size: 9px;
-    height: 20px;
-    width: 100px;
+  .profileInfo li, .updateShare {
+    height: 25px;
+    width: 150px;
   }
   .logoutButton {
-    font-size: 9px;
     height: 30px;
-    width: 100px;
+    width: 150px;
   }
   .exit {
     width: 20px;
@@ -1799,10 +1812,7 @@ select {
     padding: 10px;
   }
   
-  .episodeContainer svg, .seriesContainer svg{
-    height: 90px;
-    width: 90px;
-  }
+
   
   .seriesContainer {
     margin-bottom: 20px;

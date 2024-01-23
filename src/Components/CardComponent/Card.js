@@ -18,19 +18,13 @@ const Card = ({title, translate, series, episode, status, poster, raiting, comme
 
 
     const updateEllipseRadius = () => {
-        if (window.innerWidth <= 375){
-            setRx(30); 
-            setRy(30);
-            setCx(45);
-            setCy(45);
-            setTextStyles({ fontSize: 13, letterSpacing: 0.2 });
-        } else if (window.innerWidth <= 850) { 
+        if (window.innerWidth <= 850) { 
             setRx(25);
             setRy(25);
             setCx(35);
             setCy(35);
             setTextStyles({ fontSize: 11, letterSpacing: 0.1 });
-        }
+        } 
         else {
             setRx(30); 
             setRy(30);
@@ -42,6 +36,7 @@ const Card = ({title, translate, series, episode, status, poster, raiting, comme
 
     useEffect(() => {
         updateEllipseRadius();
+        
         window.addEventListener('resize', updateEllipseRadius);
 
         return () => {

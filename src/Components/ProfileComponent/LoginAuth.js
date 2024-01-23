@@ -31,24 +31,26 @@ const LoginAuth = () => {
                 <div className={login ? "displayNone" : "inputContainer"} >
                     <label>Имя</label>
                     <input
-                    
                     type="text"
                     onChange={e => setFullName(e.target.value)}
-                    value={fullName}/>
+                    value={fullName}
+                    required/>
                 </div>
                 <div className="inputContainer">
                     <label>Почта</label>
                     <input 
                     type="email"
                     onChange={e => setEmail(e.target.value)}
-                    value={email}/>
+                    value={email}
+                    required/>
                 </div>
                 <div className="inputContainer">
                     <label>Пароль</label>
                     <input
                     type="password"
                     onChange={e => setPassword(e.target.value)}
-                    value={password}/>
+                    value={password}
+                    required/>
                 </div>
                 <div onClick={() => loginChange(!setLogin)} className="">
                     <p className="questionAboutRegistration">{login ? "Нет профиля? Регистрация!" : "Есть профиль!"}</p>

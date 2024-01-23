@@ -3,6 +3,8 @@ import Logout from "./Logout";
 import AvatarImage from './AvatarImage'
 import { getUserData } from "../../Redux/authSlice";
 import { useSelector } from "react-redux";
+import UpdateCollection from "../CollectionComponent/UpdateCollection";
+import ShareCollection from "../CollectionComponent/ShareCollection";
 
 
 const Profile = ({ activeProfile }) => {
@@ -38,8 +40,10 @@ const Profile = ({ activeProfile }) => {
                 </div>
                 { activeProfile ? 
                 <ul className="profileInfo">
-                    <li>{fullName}</li>
-                    <li>{email}</li>
+                    <li>{fullName.toUpperCase()}</li>
+                    <li>{email.toUpperCase()}</li>
+                    <UpdateCollection/>
+                    <ShareCollection/>
                     <Logout/>
                 </ul> : ""}
             </div>
