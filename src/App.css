@@ -49,7 +49,7 @@ body {
   gap: 13.3px;
 }
 
-.emptyCollection {
+.emptyCollection, .loadingIndicator {
     width: 100%;
     height: 50vh;
     display: flex;
@@ -57,7 +57,7 @@ body {
     align-items: center;
 }
 
-.emptyCollection p{
+.emptyCollection p, .loadingIndicator p{
   font-size: 30px;
   color: #31374d;
 }
@@ -1485,7 +1485,7 @@ select {
   .logoHeaderImage {
     width: 150px;
   }
-  .emptyCollection p{
+  .emptyCollection p, .loadingIndicator p{
     font-size: 20px;
   }
   .searchNewSerialInput {

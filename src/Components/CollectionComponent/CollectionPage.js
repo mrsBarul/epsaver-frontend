@@ -31,12 +31,18 @@ const CollectionPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            setIsLoading(true);
-            await getAllSerials(setAllSerials, userId);
-            setIsLoading(false);
+            try {
+                setIsLoading(true);
+                await getAllSerials(setAllSerials, userId);
+            } catch (error) {
+                // Обработка ошибок, если необходимо
+                console.error("Error fetching data:", error);
+            } finally {
+                setIsLoading(false);
+            }
         }
-
-        fetchData()
+        
+        fetchData();
 
         window.addEventListener('resize', checkWidth)
 
@@ -79,7 +85,7 @@ const CollectionPage = () => {
             <div className='collection'>
                 {isLoading ? (
                     <div className='loadingIndicator'>
-                    Загрузка...
+                        <p>Загрузка...</p>
                     </div>) 
                 : allSerials.length > 0 ? allSerials.filter(serial => {
                     if(statusSerial === "ВСЕ") return true 
