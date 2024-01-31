@@ -23,26 +23,13 @@ const CollectionPage = () => {
     const userId = userData.user.id;
     const profileRef = useRef(null);
     const [width, setWidth] = useState(window.innerWidth);
-    const [isLoading, setIsLoading] = useState(true);
 
     const checkWidth = () => {
         setWidth(window.innerWidth)
     }
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                setIsLoading(true);
-                await getAllSerials(setAllSerials, userId);
-            } catch (error) {
-                // Обработка ошибок, если необходимо
-                console.error("Error fetching data:", error);
-            } finally {
-                setIsLoading(false);
-            }
-        }
-        
-        fetchData();
+        getAllSerials(setAllSerials, userId);
 
         window.addEventListener('resize', checkWidth)
 
@@ -83,11 +70,7 @@ const CollectionPage = () => {
                 : <Filter/> }
             </div>
             <div className='collection'>
-                {isLoading ? (
-                    <div className='loadingIndicator'>
-                        <p>Загрузка...</p>
-                    </div>) 
-                : allSerials.length > 0 ? allSerials.filter(serial => {
+                {allSerials.length > 0 ? allSerials.filter(serial => {
                     if(statusSerial === "ВСЕ") return true 
                     else if (searchWord === "") return statusSerial === serial.status
                     return serial.title.toLowerCase().includes(searchWord)}).map(serial => (
