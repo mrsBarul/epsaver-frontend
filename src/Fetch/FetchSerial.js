@@ -9,9 +9,9 @@ const getAllSerials = (setAllSerials, userId) => {
 
 
 const saveSerial = ( title, translate, series, episode, 
-    status, poster, comment, raiting, newSeason, userId, setAllSerials) => {
+    status, poster, comment, raiting, newSeason, idSerial, userId, setAllSerials) => {
     axios.post("https://epsaver.onrender.com/saveSerial", {  title, translate, series, episode, 
-    status, poster, comment, raiting, newSeason, userId})
+    status, poster, comment, raiting, newSeason, idSerial, userId})
     .then((data) => {
         getAllSerials(setAllSerials, userId)
     })

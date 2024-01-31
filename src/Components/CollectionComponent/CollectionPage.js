@@ -23,13 +23,21 @@ const CollectionPage = () => {
     const userId = userData.user.id;
     const profileRef = useRef(null);
     const [width, setWidth] = useState(window.innerWidth);
+    const [isLoading, setIsLoading] = useState(true);
 
     const checkWidth = () => {
         setWidth(window.innerWidth)
     }
 
     useEffect(() => {
-        getAllSerials(setAllSerials, userId)
+        const fetchData = async () => {
+            setIsLoading(true);
+            await getAllSerials(setAllSerials, userId);
+            setIsLoading(false);
+        }
+
+        fetchData()
+
         window.addEventListener('resize', checkWidth)
 
         function handleClickOutside(e) {
@@ -69,7 +77,11 @@ const CollectionPage = () => {
                 : <Filter/> }
             </div>
             <div className='collection'>
-                {allSerials.length > 0 ? allSerials.filter(serial => {
+                {isLoading ? (
+                    <div className='loadingIndicator'>
+                    Загрузка...
+                    </div>) 
+                : allSerials.length > 0 ? allSerials.filter(serial => {
                     if(statusSerial === "ВСЕ") return true 
                     else if (searchWord === "") return statusSerial === serial.status
                     return serial.title.toLowerCase().includes(searchWord)}).map(serial => (

@@ -52,6 +52,7 @@ const SearchModal = ({poster,title,setAllSerials,idSerial,setActiveInput,setNewS
                 setAllSerials={setAllSerials}
                 setActiveInput={setActiveInput}
                 setNewSearch={setNewSearch}
+                idSerial={ idSerial }
                 />
             </Modal>
         </div>

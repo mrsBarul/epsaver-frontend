@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 
 
-const SearchAdd = ({ setActive, poster, title, newSeason, setAllSerials, setActiveInput, setNewSearch  }) => {
+const SearchAdd = ({ setActive, poster, title, newSeason, idSerial, setAllSerials, setActiveInput, setNewSearch  }) => {
 
     const userData = useSelector(getUserData);
     const [episode, setEpisode] = useState(1);
@@ -21,7 +21,7 @@ const SearchAdd = ({ setActive, poster, title, newSeason, setAllSerials, setActi
 
     const saveNewSerials = () => {
         saveSerial(title, translate, series, episode, 
-            status, poster, comment, raiting, newSeason, userId, setAllSerials)
+            status, poster, comment, raiting, newSeason, idSerial, userId, setAllSerials)
         setActive(false)
         setActiveInput(false)
         setNewSearch('')
