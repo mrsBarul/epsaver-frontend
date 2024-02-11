@@ -46,7 +46,7 @@ export const userSlice = createSlice({
     },
 });
 
-    const API_URL = "https://epsaver.onrender.com";
+    const API_URL = "https://epsaver-p913.onrender.com";
 
     export const registrationUser = createAsyncThunk(
     "user/registrationUser",
