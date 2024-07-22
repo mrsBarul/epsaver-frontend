@@ -3,27 +3,28 @@ import logo from "../../Image/logo.png";
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
-import { getUserData } from '../../Redux/authSlice';
+import { getIsAuthenticated, getLoadingStatus, getUserData } from '../../Redux/authSlice';
 import { useSelector } from 'react-redux';
 
 
 const MainPage = () => {
 
     const userData = useSelector(getUserData);
+    const loading = useSelector(getLoadingStatus)
     const [currentSlide, setCurrentSlide] = useState(0);
+
 
     const handleShowAlert = () => {
         Swal.fire({
             title: 'Авторизация!',
-            html:'<p class="checkMail">Проверь почту, <br>' +
+            html: '<p class="checkMail">Проверь почту, <br>' +
                 'там для тебя письмо <br>' +
                 'с ссылкой для авторизации <br>' +
-                'профиля </p>',
-            showCancelButton: true, 
-            cancelButtonText: 'ОТМЕНА', 
-            showConfirmButton: true, 
+                'профиля! </p>',
+            showCancelButton: true,
+            cancelButtonText: 'ОТМЕНА',
+            showConfirmButton: true,
             confirmButtonText: 'OK',
-            
             customClass: {
                 title: 'auth',
                 html: 'html',
@@ -44,14 +45,39 @@ const MainPage = () => {
             }
         });
     };
-    
+
+    const showLoadingAlert = () => {
+        Swal.fire({
+            title: 'Загрузка...',
+            html: '<p class="checkMail">Подождите, данные загружаются!</p>',
+            allowOutsideClick: false,
+            showConfirmButton: true,
+            confirmButtonText: 'OK',
+            customClass: {
+                title: 'auth',
+                html: 'html',
+                cancelButton: 'cancel',
+                confirmButton: 'confirm',
+                popup: 'custom-popup-class',
+            },
+            buttonsStyling: false,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown',
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp',
+            },
+        });
+    };
 
     useEffect(() => {
-        if (userData && userData.user && !userData.user.isActivated) {
-            console.log('User is not activated. Showing alert...')
+        if (loading) {
+            showLoadingAlert();
+        } else if (userData && userData.user && !userData.user.isActivated){
+            Swal.close()           
             handleShowAlert();
         }
-    }, [userData]);
+    }, [loading, userData]);
 
     useEffect(() => {
         const interval = setInterval(() => {

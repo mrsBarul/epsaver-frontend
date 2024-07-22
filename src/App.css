@@ -1074,6 +1074,10 @@ select {
   color: #bbc0d3;
   border: 2px solid #707CA8;
 }
+
+.custom-popup-class .swal2-icon.swal2-loading .swal2-icon-content {
+  color: #EFDD9D;
+}
 .confirm {
   width: 180px;
   height: 70px;
