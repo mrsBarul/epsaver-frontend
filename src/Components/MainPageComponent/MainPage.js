@@ -1,7 +1,7 @@
 import MainPageSlides from './MainPageSlide';
 import logo from "../../Image/logo.png";
 import { Link } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import { getUserData } from '../../Redux/authSlice';
 import { useSelector } from 'react-redux';
@@ -48,16 +48,9 @@ const MainPage = () => {
 
     useEffect(() => {
         if (userData && userData.user && !userData.user.isActivated) {
-            const time = setTimeout(() => {
-                handleShowAlert();
-            }, 800)
-            return () => {
-                clearInterval(time);
-                isMounted.current = false;
-            }
-            
+            console.log('User is not activated. Showing alert...')
+            handleShowAlert();
         }
-        
     }, [userData]);
 
     useEffect(() => {

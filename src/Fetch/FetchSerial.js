@@ -1,12 +1,10 @@
 import axios from 'axios';
 
-
 const getAllSerials = (setAllSerials, userId) => {
     axios.get("https://epsaver-p913.onrender.com/getAllSerials",{params: {userId}})
     .then(({data}) => {
     setAllSerials(data)})
 }
-
 
 const saveSerial = ( title, translate, series, episode, 
     status, poster, comment, raiting, newSeason, idSerial, userId, setAllSerials) => {
@@ -31,7 +29,6 @@ const deleteSerial = (id, userId, setAllSerials) => {
     .then((data) => {
         getAllSerials(setAllSerials, userId)
     })
-
 }
 
 export { getAllSerials, saveSerial, editSerial, deleteSerial };
